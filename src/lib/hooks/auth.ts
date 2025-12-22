@@ -9,10 +9,10 @@ export async function signIn(username:string,password:string) {
   });
   return data?.token
 }
-export async function signUp(name:string,password:string,username:string) {
+export async function signUp(name:string,username:string,password:string) {
   const data = await auth.api.signUpEmail({
       body: {
-          email: "Nulll", // required
+          email: "nulll@gmail.com", // required
           name: name, // required
           password: password, // required
           username: username,
