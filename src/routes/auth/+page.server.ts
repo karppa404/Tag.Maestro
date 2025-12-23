@@ -38,7 +38,7 @@ export const actions = {
 		}
 
 		// Redirect after successful sign in
-		throw redirect(303, '/dashboard');
+		throw redirect(303, '/');
 	},
 
 	signup: async ({request }) => {
@@ -86,6 +86,6 @@ export const actions = {
 		}
 
 		// Redirect after successful sign up
-		throw redirect(303, '/dashboard');
+		throw redirect(303, '/');
 	}
 } satisfies Actions;

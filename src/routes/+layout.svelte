@@ -11,8 +11,8 @@
 	<link rel="icon" href={favicon} />
 	<title>Board</title>
 </svelte:head>
-<main class="h-full w-full flex flex-col items-center">
-    <section class="w-full md:max-w-4xl md:min-w-4xl">
+<main class="min-h-screen w-full flex flex-col items-center">
+    <section class=" h-full w-full md:max-w-4xl md:min-w-4xl">
        	<Navigation />
 	{@render children?.()}
     </section>

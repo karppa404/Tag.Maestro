@@ -11,7 +11,7 @@
 	let { data, form }: { data: any; form: ActionData } = $props();
 </script>
 
-<main class="flex min-h-screen w-full items-center justify-center">
+<main class="flex flex-col h-full w-full items-center justify-center">
 	<div class="flex w-full max-w-7xl items-center justify-between px-8">
 		<!-- Logo (left) -->
 		<img src={Ico} alt="ico" class="hidden size-98 md:block" />

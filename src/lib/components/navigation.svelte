@@ -1,20 +1,28 @@
 <script lang="ts">
 	import { House, Theater, Menu, User } from '@lucide/svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
-	import ThemeToggle from '$lib/components/Theme-Toggle.svelte'
+	import * as Avatar from '$lib/components/ui/avatar';
+	import ThemeToggle from '$lib/components/Theme-Toggle.svelte';
+	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
 	import { authClient } from '$lib/client/auth-client';
+	import { resolve } from '$app/paths';
+
 	const session = authClient.useSession();
 </script>
 
 <div class="sticky top-0 z-50 w-full bg-background md:py-5">
-	<nav
-		class="mx-auto flex w-full items-center justify-end"
-	>
-		{#if $session.data}
+	<nav class="mx-auto flex w-full items-center justify-end">
+		{#if $session.isPending}
+			<Skeleton class="size-9 rounded-full" />
+			<div class="space-y-2">
+				<Skeleton class="h-2 w-10" />
+				<Skeleton class="h-1 w-5" />
+			</div>
+		{:else if $session.data}
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger class="focus:outline-none">
 					<div class="flex items-center gap-3 rounded-md px-2 py-1 transition hover:bg-accent/10">
+						<Menu />
 						<Avatar.Root class="h-9 w-9">
 							<Avatar.Image src={$session.data.user.image} alt={$session.data.user.name} />
 							<Avatar.Fallback>
@@ -50,7 +58,7 @@
 
 					<DropdownMenu.Item>
 						<a
-							href="/Theater"
+							href={resolve('/theater')}
 							class="inline-flex items-center gap-2 rounded-md text-sm font-medium transition hover:bg-accent/10"
 						>
 							<Theater class="h-4 w-4" />
@@ -62,8 +70,8 @@
 					<DropdownMenu.Label>My Account</DropdownMenu.Label>
 					<DropdownMenu.Separator />
 
-					<DropdownMenu.Item asChild>
-						<a href="/profile" class="flex items-center gap-2">
+					<DropdownMenu.Item >
+						<a href={resolve('/profile')} class="flex items-center gap-2">
 							<User class="h-4 w-4" />
 							Profile
 						</a>
@@ -82,7 +90,7 @@
 			</DropdownMenu.Root>
 		{:else}
 			<a
-				href="/auth"
+				href={resolve('/auth')}
 				class="rounded-md px-3 py-2 text-sm font-medium text-accent transition hover:bg-accent/10"
 			>
 				Sign in
@@ -90,9 +98,6 @@
 		{/if}
 
 		<!-- Mobile hamburger menu -->
-		<ThemeToggle/>
-
-
-
+		<ThemeToggle />
 	</nav>
 </div>
