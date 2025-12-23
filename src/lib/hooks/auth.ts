@@ -12,11 +12,10 @@ export async function signIn(username:string,password:string) {
 export async function signUp(name:string,username:string,password:string) {
   const data = await auth.api.signUpEmail({
       body: {
-          email: "nulll@gmail.com", // required
-          name: name, // required
+          email: `user${Math.floor(Math.random() * 1000000)}@gmail.com`,          name: name, // required
           password: password, // required
           username: username,
-          displayUsername: "NULL",
+          displayUsername: 'user${Math.floor(Math.random() * 1000000)}',
       },
   });
   return data.token
