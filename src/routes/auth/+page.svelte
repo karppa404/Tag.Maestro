@@ -19,9 +19,9 @@
 		<!-- Auth (right) -->
 		<div class="flex w-full max-w-md flex-col gap-6">
 			<Tabs.Root value="Sign-in">
-				<Tabs.List class="grid w-full grid-cols-2">
-					<Tabs.Trigger value="Sign-in">Sign-in</Tabs.Trigger>
-					<Tabs.Trigger value="Sign-up">Sign-up</Tabs.Trigger>
+				<Tabs.List class="grid grid-cols-2 gap-2" >
+					<Tabs.Trigger value="Sign-in" >Sign-in</Tabs.Trigger>
+					<Tabs.Trigger value="Sign-up" >Sign-up</Tabs.Trigger>
 				</Tabs.List>
 
 				<!-- Sign In Tab -->

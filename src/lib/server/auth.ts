@@ -9,6 +9,7 @@ export const auth = betterAuth({
 	emailAndPassword: {
 		enabled: true
 	},
+
 	plugins: [sveltekitCookies(getRequestEvent), username()], // make sure this is the last plugin in the array
 
 	database: drizzleAdapter(db, {
