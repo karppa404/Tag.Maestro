@@ -14,7 +14,7 @@
 		},
 		{
 			title: 'Explore',
-			url: '#',
+			url: '/explore',
 			icon: Map,
 			subItems: [
 				{
@@ -76,7 +76,7 @@
 											<Sidebar.MenuButton>
 												{#snippet child({ props })}
 													<a
-														href={subItem.url}
+													href={`/${[item.url, subItem.url].map(s => s?.replace(/^\/|\/$/g, '')).filter(Boolean).join('/')}`}
 														{...props}
 														class="flex items-center gap-2 rounded-md px-3 py-2 pl-9 text-sm 
 														transition-colors hover:bg-foreground/10"
@@ -119,6 +119,6 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
-		<ThemeToggle />
+
 	</Sidebar.Footer>
 </Sidebar.Root>
