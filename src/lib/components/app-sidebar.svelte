@@ -3,7 +3,6 @@
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Map, Search, Dices, Hash, House,PlusCircle } from '@lucide/svelte';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import Favicon from '$lib/assets/favicon.svg';
 	// Menu items.
 	const items = [
