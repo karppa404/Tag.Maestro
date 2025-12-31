@@ -8,6 +8,8 @@
 	import Favicon from '$lib/assets/favicon.svg';
 	import TwitterAuthButton from '$lib/components/auth/TwitterAuthButton.svelte';
 	import { authClient } from '$lib/client/auth-client';
+	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
+
 	const session = authClient.useSession();
 
 	// Menu items.
@@ -144,6 +146,16 @@
 			>
 				Sign Out
 			</Button>
+		{:else if $session.isPending}
+			<div class="flex items-center space-x-4 transition-colors">
+				<Skeleton class="size-12 rounded-full" />
+				<div class="space-y-2 w-full">
+					<Skeleton class="h-4 w-full" />
+					<Skeleton class="h-4 w-full" />
+				</div>
+
+			</div>
+				<Skeleton class="h-10 w-full" />
 		{:else}
 			<TwitterAuthButton />
 		{/if}
