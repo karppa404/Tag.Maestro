@@ -3,6 +3,13 @@ import { usernameClient } from "better-auth/client/plugins"
 
 export const authClient = createAuthClient({
   plugins: [
-       usernameClient()
+       usernameClient(),
    ]
 });
+
+
+export const signIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "twitter"
+    })
+}
