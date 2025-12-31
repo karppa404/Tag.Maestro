@@ -3,6 +3,21 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+.hide-scrollbar {
+  /* For Chrome, Safari, and Opera (WebKit browsers) */
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0; /* Optional: also for horizontal scrollbar issues */
+    height: 0;
+  }
+
+  /* For Internet Explorer and Edge (legacy) */
+  -ms-overflow-style: none;
+
+  /* For Firefox */
+  scrollbar-width: none;
+}
+
 :root {
  --sidebar: oklch(0.985 0 0);
  --sidebar-foreground: oklch(0.145 0 0);
@@ -31,7 +46,7 @@
   --card-foreground: oklch(0.19 0 0);
   --popover: oklch(1.00 0 0);
   --popover-foreground: oklch(0.27 0.02 99.70);
-  --primary: oklch(0.62 0.14 39.15);
+  --primary: oklch(0.65 0.17 270.62);
   --primary-foreground: oklch(1.00 0 0);
   --secondary: oklch(0.92 0.01 87.42);
   --secondary-foreground: oklch(0.43 0.02 99.33);
@@ -39,18 +54,18 @@
   --muted-foreground: oklch(0.61 0.01 91.49);
   --accent: oklch(0.92 0.01 87.42);
   --accent-foreground: oklch(0.27 0.02 99.70);
-  --destructive: oklch(0.19 0 0);
+  --destructive: oklch(0.72 0.18 22.51);
   --border: oklch(0.88 0.01 100.76);
   --input: oklch(0.76 0.02 96.91);
   --ring: oklch(0.59 0.17 252.92);
-  --chart-1: oklch(0.56 0.13 42.95);
+  --chart-1: oklch(0.59 0.17 253.19);
   --chart-2: oklch(0.69 0.16 290.29);
   --chart-3: oklch(0.88 0.03 91.64);
   --chart-4: oklch(0.88 0.04 298.21);
-  --chart-5: oklch(0.56 0.13 41.94);
+  --chart-5: oklch(0.83 0.08 294.68);
   --sidebar: oklch(0.97 0.01 93.49);
   --sidebar-foreground: oklch(0.36 0.01 106.85);
-  --sidebar-primary: oklch(0.62 0.14 39.15);
+  --sidebar-primary: oklch(0.59 0.17 253.19);
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.92 0.01 87.42);
   --sidebar-accent-foreground: oklch(0.33 0 0);
@@ -81,7 +96,7 @@
   --card-foreground: oklch(0.98 0.01 93.48);
   --popover: oklch(0.31 0 0);
   --popover-foreground: oklch(0.92 0 0);
-  --primary: oklch(0.67 0.13 38.92);
+  --primary: oklch(0.74 0.13 265.71);
   --primary-foreground: oklch(1.00 0 0);
   --secondary: oklch(0.98 0.01 93.48);
   --secondary-foreground: oklch(0.31 0 0);
