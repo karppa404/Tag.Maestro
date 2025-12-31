@@ -8,8 +8,10 @@ export const authClient = createAuthClient({
 
 });
 
-export const signIn = async () => {
-    const data = await authClient.signIn.social({
-        provider: "twitter"
-    })
+export async function signInWithTwitter() {
+  await authClient.signIn.social({
+    provider: "twitter",
+    callbackURL: "/",
+    errorCallbackURL: "/auth",
+  });
 }

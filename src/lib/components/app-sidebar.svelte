@@ -1,9 +1,15 @@
 <script lang="ts">
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
-	import { Map, Search, Dices, Hash, House,PlusCircle } from '@lucide/svelte';
+	import { Map, Search, Dices, Hash, House, PlusCircle } from '@lucide/svelte';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import * as Avatar from '$lib/components/ui/avatar/index';
+	import { Button } from '$lib/components/ui/button/index';
 	import Favicon from '$lib/assets/favicon.svg';
+	import TwitterAuthButton from '$lib/components/auth/TwitterAuthButton.svelte';
+	import { authClient } from '$lib/client/auth-client';
+	const session = authClient.useSession();
+
 	// Menu items.
 	const items = [
 		{
@@ -37,7 +43,7 @@
 			title: 'post',
 			url: '/post',
 			icon: PlusCircle
-		},
+		}
 	];
 </script>
 
@@ -56,7 +62,7 @@
 							{#snippet child({ props })}
 								<Collapsible.Trigger
 									{...props}
-									class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors 
+									class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors
 									hover:bg-foreground/10 "
 								>
 									<item.icon class="size-4" />
@@ -75,9 +81,12 @@
 											<Sidebar.MenuButton>
 												{#snippet child({ props })}
 													<a
-													href={`/${[item.url, subItem.url].map(s => s?.replace(/^\/|\/$/g, '')).filter(Boolean).join('/')}`}
+														href={`/${[item.url, subItem.url]
+															.map((s) => s?.replace(/^\/|\/$/g, ''))
+															.filter(Boolean)
+															.join('/')}`}
 														{...props}
-														class="flex items-center gap-2 rounded-md px-3 py-2 pl-9 text-sm 
+														class="flex items-center gap-2 rounded-md px-3 py-2 pl-9 text-sm
 														transition-colors hover:bg-foreground/10"
 													>
 														<subItem.icon class="h-4 w-4" />
@@ -102,7 +111,7 @@
 										<a
 											href={item.url}
 											{...props}
-											class="flex items-center gap-2 rounded-md px-3 py-2 text-sm 
+											class="flex items-center gap-2 rounded-md px-3 py-2 text-sm
 											transition-colors hover:bg-foreground/10"
 										>
 											<item.icon class="h-4 w-4" />
@@ -118,6 +127,25 @@
 		{/each}
 	</Sidebar.Content>
 	<Sidebar.Footer>
-
+		{#if $session.data}
+			<div class="inline-flex items-baseline gap-5">
+				<Avatar.Root>
+					<Avatar.Image src={$session.data.user.image} alt={$session.data.user.name} />
+					<Avatar.Fallback>{$session.data.user.name}</Avatar.Fallback>
+				</Avatar.Root>
+				<p>
+					{$session.data.user.name}
+				</p>
+			</div>
+			<Button
+				onclick={async () => {
+					await authClient.signOut();
+				}}
+			>
+				Sign Out
+			</Button>
+		{:else}
+			<TwitterAuthButton />
+		{/if}
 	</Sidebar.Footer>
 </Sidebar.Root>
