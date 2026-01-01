@@ -19,8 +19,8 @@ export const auth = betterAuth({
  } ,
 	socialProviders: {
         twitter: { 
-            clientId: process.env.TWITTER_CLIENT_ID , 
-            clientSecret: process.env.TWITTER_CLIENT_SECRET, 
+            clientId: process.env.TWITTER_CLIENT_ID! , 
+            clientSecret: process.env.TWITTER_CLIENT_SECRET!, 
         }, 
     },
     

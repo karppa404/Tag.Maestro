@@ -11,7 +11,7 @@ export const authClient = createAuthClient({
 export async function signInWithTwitter() {
   await authClient.signIn.social({
     provider: "twitter",
-    // callbackURL: "/",
-    // errorCallbackURL: "/",
+    callbackURL: "/api/auth/callback/twitter",
+    errorCallbackURL: "/",
   });
 }
