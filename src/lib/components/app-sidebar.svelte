@@ -6,7 +6,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index';
 	import { Button } from '$lib/components/ui/button/index';
 	import Favicon from '$lib/assets/favicon.svg';
-	import TwitterAuthButton from '$lib/components/auth/TwitterAuthButton.svelte';
+	import AuthButtons from '$lib/components/auth/AuthButtons.svelte';
 	import { authClient } from '$lib/client/auth-client';
 	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
 
@@ -157,7 +157,7 @@
 			</div>
 				<Skeleton class="h-10 w-full" />
 		{:else}
-			<TwitterAuthButton />
+			<AuthButtons />
 		{/if}
 	</Sidebar.Footer>
 </Sidebar.Root>
