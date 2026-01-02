@@ -2,12 +2,12 @@ import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { sveltekitCookies } from 'better-auth/svelte-kit';
 import { getRequestEvent } from '$app/server';
-import process from 'node:process';
+import { env } from '$env/dynamic/private';
 import { db } from './db';
 export const auth = betterAuth({
-	secret: process.env.BETTER_AUTH_SECRET!,
+	secret: env.BETTER_AUTH_SECRET!,
 
-	baseURL: process.env.BETTER_AUTH_URL,
+	baseURL: env.BETTER_AUTH_URL,
 
 	database: drizzleAdapter(db, {
 		provider: 'pg' // or "mysql", "sqlite"
@@ -18,10 +18,13 @@ export const auth = betterAuth({
 		enabled: true
 	},
 	socialProviders: {
-
 		github: {
-			clientId: process.env.GITHUB_CLIENT_ID,
-			clientSecret: process.env.GITHUB_CLIENT_SECRET
+			clientId: env.GITHUB_CLIENT_ID,
+			clientSecret: env.GITHUB_CLIENT_SECRET
+		},
+		google: {
+			clientId: env.GOOGLE_CLIENT_ID,
+			clientSecret: env.GOOGLE_CLIENT_SECRET
 		}
 	}
 });
