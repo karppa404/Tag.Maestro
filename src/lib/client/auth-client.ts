@@ -14,6 +14,11 @@ export const authClient = createAuthClient({
 // }
 export async function signInWitGithub() {
 	await authClient.signIn.social({
-		provider: 'github',
+		provider: 'github'
+	});
+}
+export async function signInWithGoogle() {
+	await authClient.signIn.social({
+		provider: 'google'
 	});
 }
