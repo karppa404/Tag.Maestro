@@ -20,12 +20,14 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
+		"@internationalized/date": "^3.10.0",
 		"@lucide/svelte": "^0.562.0",
 		"@sveltejs/adapter-auto": "^7.0.0",
 		"@sveltejs/kit": "^2.49.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/vite": "^4.1.17",
 		"@types/node": "^24",
+		"bits-ui": "^2.14.4",
 		"clsx": "^2.1.1",
 		"drizzle-kit": "^0.31.8",
 		"drizzle-orm": "^0.45.0",
@@ -47,6 +49,8 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"@neondatabase/serverless": "^1.0.2"
+		"@neondatabase/serverless": "^1.0.2",
+		"better-auth": "^1.4.10",
+		"mode-watcher": "^1.1.0"
 	}
 }
