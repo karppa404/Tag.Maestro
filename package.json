@@ -31,6 +31,7 @@
 		"clsx": "^2.1.1",
 		"drizzle-kit": "^0.31.8",
 		"drizzle-orm": "^0.45.0",
+		"embla-carousel-svelte": "^8.6.0",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
