@@ -28,10 +28,10 @@
 							<Input id="email" name="email" type="email" placeholder="you@example.com" required />
 						</div>
 
-						<div class="grid gap-3">
+						<div class="grid  gap-2">
 							<Label for="password">Password</Label>
 
-							<div class="relative">
+							<div class="relative gap-2">
 								<Input
 									id="password"
 									name="password"
@@ -88,7 +88,7 @@
 						<div class="grid gap-3">
 							<Label for="signup-password">Password</Label>
 
-							<div class="relative">
+							<div class="relative flex-col flex gap-2">
 								<Input
 									id="signup-password"
 									name="password"
