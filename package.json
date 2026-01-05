@@ -1,5 +1,5 @@
 {
-	"name": "board",
+	"name": "karppa.party",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -31,6 +31,7 @@
 		"clsx": "^2.1.1",
 		"drizzle-kit": "^0.31.8",
 		"drizzle-orm": "^0.45.0",
+		"embla-carousel-svelte": "^8.6.0",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
@@ -51,8 +52,7 @@
 	"dependencies": {
 		"@icons-pack/svelte-simple-icons": "^6.5.0",
 		"@neondatabase/serverless": "^1.0.2",
-		"better-auth": "^1.4.9",
-		"dotenv": "^17.2.3",
+		"better-auth": "^1.4.10",
 		"mode-watcher": "^1.1.0"
 	}
 }
