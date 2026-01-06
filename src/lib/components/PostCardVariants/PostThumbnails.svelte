@@ -23,7 +23,7 @@
 	} = $props();
 </script>
 
-	<Card.Root class="w-full gap-6  bg-sidebar ">
+	<Card.Root class="w-full gap-6  bg-sidebar " id={postId}>
 		<a href={board+"/"+"post"+"/"+postId} class="transition-all hover:brightness-85">
 
 		<Card.Header class="gap-2">

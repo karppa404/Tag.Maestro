@@ -23,22 +23,13 @@
 	} = $props();
 </script>
 
-	<Card.Root class="w-full gap-6  bg-sidebar ">
-		<a href={board+"/"+"post"+"/"+postId} class="transition-all hover:brightness-85">
+	<Card.Root class="w-full gap-6  bg-sidebar " id={postId}>
 
-		<Card.Header class="gap-2">
+		<Card.Header class="gap-2 relative">
 			<p class="text-primary">{username}</p>
 			<Card.Title class="text-xl font-bold">{title}</Card.Title>
 			<Card.Description>{subtitle}</Card.Description>
-		</Card.Header>
-		</a>
-		<Card.Content class="flex w-full flex-row ">
-			<div class="line-clamp-3 overflow-hidden">
-				{body}
-			</div>
-		</Card.Content>
-		<Card.Footer class="relative flex flex-col gap-4">
-			<div class="w-full items-center">
+            <div class="w-full items-center">
 				<Carousel.Root
 					opts={{
 						align: 'start'
@@ -60,10 +51,15 @@
 					<Carousel.Next class="right-2" />
 				</Carousel.Root>
 			</div>
-			<div class="inline-flex w-full items-start justify-start gap-2">
-				<MessageCircle />
-				{commentCount}
+	
+		</Card.Header>
+		<Card.Content class="flex w-full flex-row ">
+			<div class="">
+				{body}
 			</div>
+		</Card.Content>
+		<Card.Footer class="relative flex flex-col gap-4">
+			
 		</Card.Footer>
 	</Card.Root>
 
