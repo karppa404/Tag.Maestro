@@ -1,8 +1,19 @@
 <script lang="ts">
-    import { authClient } from "$lib/client/auth-client";
-    const user = await authClient.signIn.anonymous();
-
+	import { getBoards } from '@/remote/data.remote';
+    import BoardButton from '@/components/BoardButton.svelte';
 </script>
-{user.data?.token}
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+
+<main class="flex h-full w-full flex-col">
+	<svelte:boundary>
+		<div class="h-full w-full">
+			{#each await getBoards() as board (board.id)}
+            <BoardButton
+                name={board.name}
+                link={board.boardLink}
+                img={board.bgImgUrl}
+            />
+				
+			{/each}
+		</div>
+	</svelte:boundary>
+</main>
