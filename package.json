@@ -50,6 +50,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
+		"@icons-pack/svelte-simple-icons": "^6.5.0",
 		"@neondatabase/serverless": "^1.0.2",
 		"better-auth": "^1.4.10",
 		"mode-watcher": "^1.1.0"
