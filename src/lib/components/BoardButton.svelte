@@ -5,7 +5,7 @@
 
 <Button
 	variant="outline"
-	href={"/"+link}
+	href={"/board/"+link}
 	class="relative max-w-3xs min-w-3xs h-fit bg-cover bg-center "
 	style={`background-image: url(${img});`}
 >
