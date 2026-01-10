@@ -9,5 +9,5 @@
 	class="relative max-w-3xs min-w-3xs h-fit bg-cover bg-center "
 	style={`background-image: url(${img});`}
 >
-	<span class="relative z-10">{name}</span>
+	<span class="relative z-10 h-full ">{name}</span>
 </Button>
