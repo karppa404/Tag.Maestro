@@ -19,6 +19,7 @@
 	class="overflow-hidden"
 	use:emblaCarouselSvelte={{
 		options: {
+			loop: true,
 			container: "[data-embla-container]",
 			slides: "[data-embla-slide]",
 			...emblaCtx.options,
