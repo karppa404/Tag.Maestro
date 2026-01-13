@@ -1,19 +1,2 @@
-<script lang="ts">
-	import { getBoards } from '@/remote/data.remote';
-    import BoardButton from '@/components/BoardButton.svelte';
-</script>
-
-<main class="flex h-full w-full flex-col">
-	<svelte:boundary>
-		<div class="h-full w-full">
-			{#each await getBoards() as board (board.id)}
-            <BoardButton
-                name={board.name}
-                link={board.boardLink}
-                img={board.bgImgUrl}
-            />
-				
-			{/each}
-		</div>
-	</svelte:boundary>
-</main>
+<h1>Welcome to SvelteKit</h1>
+<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
