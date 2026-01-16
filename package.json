@@ -15,8 +15,13 @@
 		"tauri": "tauri"
 	},
 	"dependencies": {
+		"@convex-dev/better-auth": "^0.10.10",
+		"@mmailaender/convex-better-auth-svelte": "^0.5.0",
 		"@tauri-apps/api": "^2",
 		"@tauri-apps/plugin-opener": "^2",
+		"better-auth": "1.4.9",
+		"convex": "^1.31.5",
+		"convex-svelte": "^0.0.12",
 		"mode-watcher": "^1.1.0"
 	},
 	"devDependencies": {
