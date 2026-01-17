@@ -1,5 +1,5 @@
 {
-  "projectName": "l",
+  "projectName": "tagmaster",
   "mode": "file-router",
   "typescript": true,
   "packageManager": "pnpm",
@@ -12,9 +12,9 @@
     "eslint",
     "nitro",
     "start",
+    "workos",
     "convex",
     "compiler",
-    "shadcn",
-    "better-auth"
+    "shadcn"
   ]
 }

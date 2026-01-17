@@ -1,11 +1,12 @@
 import { Link } from '@tanstack/react-router'
 
-import BetterAuthHeader from '../integrations/better-auth/header-user.tsx'
+import WorkOSHeader from './workos-user.tsx'
 
 import { useState } from 'react'
 import {
   ChevronDown,
   ChevronRight,
+  CircleUserRound,
   Globe,
   Home,
   Menu,
@@ -173,6 +174,19 @@ export default function Header() {
           )}
 
           <Link
+            to="/demo/workos"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
+            }}
+          >
+            <CircleUserRound size={20} />
+            <span className="font-medium">WorkOS</span>
+          </Link>
+
+          <Link
             to="/demo/convex"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
@@ -185,24 +199,11 @@ export default function Header() {
             <span className="font-medium">Convex</span>
           </Link>
 
-          <Link
-            to="/demo/better-auth"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Globe size={20} />
-            <span className="font-medium">Better Auth</span>
-          </Link>
-
           {/* Demo Links End */}
         </nav>
 
         <div className="p-4 border-t border-gray-700 bg-gray-800 flex flex-col gap-2">
-          <BetterAuthHeader />
+          <WorkOSHeader />
         </div>
       </aside>
     </>
