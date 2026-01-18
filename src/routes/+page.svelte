@@ -1,23 +1,26 @@
 <script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
+  import * as Resizable from "$lib/components/ui/resizable";
 </script>
-<main class="min-h-screen max-h-screen w-full">
-    <Resizable.PaneGroup
-      class="w-full h-full rounded-lg "
-      direction="horizontal"
-    >
-      <Resizable.Pane defaultSize={25}>
-        <div class="flex h-full items-center justify-center p-6 w-full ">
-          <span class="font-semibold">Header</span>
-          Hello
-        </div>
-      </Resizable.Pane>
-      <Resizable.Handle />
-      <Resizable.Pane defaultSize={75}>
-        <div class="flex h-full items-center justify-center p-6 w-full ">
-          <span class="font-semibold">Content</span>
-          What is up guys
-        </div>
-      </Resizable.Pane>
-    </Resizable.PaneGroup>
+
+<main class="h-full w-full flex flex-col">
+  <Resizable.PaneGroup
+    direction="horizontal"
+    class="flex-1 w-full rounded-lg"
+  >
+    <Resizable.Pane defaultSize={25}>
+      <div class="h-full w-full flex items-center justify-center p-6">
+        <span class="font-semibold">Header</span>
+        Hello
+      </div>
+    </Resizable.Pane>
+
+    <Resizable.Handle />
+
+    <Resizable.Pane defaultSize={75}>
+      <div class="h-full w-full flex items-center justify-center p-6">
+        <span class="font-semibold">Content</span>
+        What is up guys
+      </div>
+    </Resizable.Pane>
+  </Resizable.PaneGroup>
 </main>

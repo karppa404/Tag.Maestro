@@ -15,12 +15,12 @@
 </svelte:head>
 
 <ModeWatcher />
-<main class="w-full h-full flex flex-col">
-    <div class="flex-1 h-full w-full">
+<main class="min-h-screen w-full flex flex-col">
+    <div class=" w-full">
         Hello
     </div>
-    <div class="flex-0 h-full w-full">
-        {@render children()}
 
+    <div class="h-full w-full">
+        {@render children()}
     </div>
 </main>
