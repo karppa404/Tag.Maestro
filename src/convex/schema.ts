@@ -13,7 +13,7 @@ export default defineSchema({
 		name: v.string(),
 		id: v.id('groups')
   }),
-	// media: This is the definition for media files
+	// Media: This is the definition for media files
   media: defineTable({
     id: v.id('media'),
     name: v.string(),
@@ -24,4 +24,5 @@ export default defineSchema({
     sha256:v.string(),
     tags: v.array(v.id('tags'))
   }).index("id", ["id"]),
+  // 
 });
