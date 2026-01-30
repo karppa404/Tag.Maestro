@@ -1,34 +1,42 @@
-# electron-app
+# sv
 
-An Electron application with Svelte and TypeScript
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Recommended IDE Setup
+## Creating a project
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Project Setup
-
-### Install
-
-```bash
-$ pnpm install
+```sh
+# create a new project
+npx sv create my-app
 ```
 
-### Development
+To recreate this project with the same configuration:
 
-```bash
-$ pnpm dev
+```sh
+# recreate this project
+bun x sv create --template minimal --types ts --add prettier eslint tailwindcss="plugins:none" drizzle="database:sqlite+sqlite:better-sqlite3" --install bun .
 ```
 
-### Build
+## Developing
 
-```bash
-# For windows
-$ pnpm build:win
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-# For macOS
-$ pnpm build:mac
+```sh
+npm run dev
 
-# For Linux
-$ pnpm build:linux
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
+
+## Building
+
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
