@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
-	  "main": "main.ts",
+	"main": "main.ts",
 	"scripts": {
 		"start": "electron .",
 		"test": "echo \"Error: no test specified\"",
@@ -46,6 +46,7 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"better-sqlite3": "^12.6.2"
+		"better-sqlite3": "^12.6.2",
+		"electron-store": "^11.0.2"
 	}
 }
