@@ -1,28 +1,43 @@
+// electron/main.ts
 import { app, BrowserWindow } from 'electron';
+import path from 'path';
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 1280,
-    height: 720,
+// Set the database path before anything else
+const userDataPath = app.getPath('userData');
+const dbPath = path.join(userDataPath, 'myapp.db');
+process.env.DATABASE_URL = dbPath;
+
+let mainWindow: BrowserWindow | null = null;
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 800,
     webPreferences: {
       nodeIntegration: false,
-      contextIsolation: true
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   });
 
-  // Load from Vite dev server
-  win.loadURL('http://localhost:3000');
-  
-  // Open DevTools in development
-  win.webContents.openDevTools();
-};
+  // In development
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.loadURL('http://localhost:3000');
+  } else {
+    // In production, load the built SvelteKit app
+  }
+}
 
-app.on('ready', () => {
-  createWindow();
-});
+app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
+  }
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
   }
 });

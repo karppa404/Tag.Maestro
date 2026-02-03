@@ -3,8 +3,9 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"main": "main.ts",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev & electron . & drizzle-kit studio",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -15,7 +16,8 @@
 		"db:push": "drizzle-kit push",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
-		"db:studio": "drizzle-kit studio"
+		"db:studio": "drizzle-kit studio",
+		"start": "electron ."
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.1",
@@ -38,11 +40,13 @@
 		"svelte": "^5.48.2",
 		"svelte-check": "^4.3.5",
 		"tailwindcss": "^4.1.18",
+		"turbo": "^2.8.2",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.53.1",
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
 		"better-sqlite3": "^12.6.2",
 		"electron": "^40.1.0"
 	}
