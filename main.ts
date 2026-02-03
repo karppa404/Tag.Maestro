@@ -1,6 +1,10 @@
 // electron/main.ts
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Set the database path before anything else
 const userDataPath = app.getPath('userData');
@@ -20,11 +24,15 @@ function createWindow() {
     }
   });
 
-  // In development
-  if (process.env.NODE_ENV === 'development') {
+  // Use app.isPackaged instead of SvelteKit env
+  const isDev = !app.isPackaged;
+  
+  if (isDev) {
     mainWindow.loadURL('http://localhost:3000');
+    mainWindow.webContents.openDevTools();
   } else {
     // In production, load the built SvelteKit app
+    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
   }
 }
 
