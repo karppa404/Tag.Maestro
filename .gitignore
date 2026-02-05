@@ -1,5 +1,5 @@
 node_modules
-
+bun.lock
 # Output
 .output
 .vercel
@@ -7,7 +7,7 @@ node_modules
 .wrangler
 /.svelte-kit
 /build
-
+/out
 # OS
 .DS_Store
 Thumbs.db
