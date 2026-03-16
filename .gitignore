@@ -1,5 +1,5 @@
 node_modules
-bun.lock
+
 # Output
 .output
 .vercel
@@ -7,7 +7,7 @@ bun.lock
 .wrangler
 /.svelte-kit
 /build
-/out
+
 # OS
 .DS_Store
 Thumbs.db
@@ -21,6 +21,3 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# SQLite
-*.db
