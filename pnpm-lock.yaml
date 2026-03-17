@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@perplexity-ai/perplexity_ai':
+        specifier: ^0.26.2
+        version: 0.26.2
     devDependencies:
       '@eslint/compat':
         specifier: ^2.0.2
@@ -677,6 +681,9 @@ packages:
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
+
+  '@perplexity-ai/perplexity_ai@0.26.2':
+    resolution: {integrity: sha512-1E6GrQ7QHUSSd+7UNx+C+FOgxRLCQ87W+Tj0Zg+hwxzz1ttjQnU79p/Kl+n5WlqGdgODIUD9FTrQT7q2Yx2Jxg==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -2346,6 +2353,8 @@ snapshots:
     optional: true
 
   '@neon-rs/load@0.0.4': {}
+
+  '@perplexity-ai/perplexity_ai@0.26.2': {}
 
   '@polka/url@1.0.0-next.29': {}
 
