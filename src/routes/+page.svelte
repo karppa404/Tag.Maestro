@@ -1,8 +1,9 @@
 <script lang="ts">
     import MarketCard from "$lib/components/MarketCard.svelte"
     import { getBalance } from "$lib/remote/data.remote";
-    const query = getBalance();
-    console.log(JSON.stringify(query))
+    const query =await getBalance();
+    console.log((query))
+
 </script>
 
 <MarketCard/>
@@ -11,6 +12,7 @@
     <p>oops!</p>
 {:else if query.loading}
     <p>loading...</p>
-{:else}
-    current Balance: {(query)}
+{:else if query}
+    <p>Available Balance: ${((query ?? 0) / 100).toFixed(2)}</p>
+    
 {/if}
