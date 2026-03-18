@@ -1,7 +1,7 @@
 <script lang="ts">
     import MarketCard from "$lib/components/MarketCard.svelte"
     import { getBalance } from "$lib/remote/data.remote";
-    const query =await getBalance();
+    const query = await getBalance();
     console.log((query))
 
 </script>

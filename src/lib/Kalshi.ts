@@ -1,4 +1,8 @@
-import { Configuration, PortfolioApi } from 'kalshi-typescript';
+import {
+  PortfolioApi,
+  MarketApi,
+  Configuration,
+} from 'kalshi-typescript';
 import { env } from '$env/dynamic/private';
 import { resolve } from 'path';
 
@@ -9,3 +13,4 @@ const config = new Configuration({
 });
 
 export const portfolioApi = new PortfolioApi(config);
+export const marketAPI =new MarketApi(config);

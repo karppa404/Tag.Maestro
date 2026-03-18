@@ -3,6 +3,7 @@
   import { Badge } from "$lib/components/ui/badge/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
   import { Separator } from "$lib/components/ui/separator/index.js";
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 
   type Option = {
     name: string;
@@ -13,6 +14,7 @@
 
   let {
     question = "Which Party will win the U.S House?",
+    marketLink = "https://demo.kalshi.co/markets/kxsurvivor/who-will-win-survivor/kxsurvivor-26dec31",
     dateTime = "Jul 1 @ 7:40AM",
     options = [
       { name: "Democratic Party",  multiplier: "1.18x", probability: 85, color: "bg-blue-500" },
@@ -21,7 +23,7 @@
     volume = "$6,829,951",
     marketCount = 2,
     positionSize = "1.2%",
-    resolutionClause = "",
+    resolutionClause = "The winner must be officially announced in the finale or via official channels immediately following. Multiple joint winners each resolve to Yes with split payouts ($1 divided by number of winners). If no winner is declared, all markets resolve to No. Winners who decline the award still count unless acceptance was a condition of victory. Disqualifications or withdrawals before the finale resolve to No. Later title stripping doesn't affect resolution - the original finale announcement governs. Fan favorite or other secondary awards don't count as winning. For couples/teams competitions, being part of the winning unit counts.",
     shareCount = 19,
     shareType = "YES",
   } = $props();
@@ -90,10 +92,30 @@
       </span>
       <span class="flex items-center gap-1">
         Resolution Clause
-        <span
-          class="inline-flex items-center justify-center w-4 h-4 rounded-full border border-border text-muted-foreground text-[10px] cursor-help"
-          title={resolutionClause}
-        >?</span>
+        <HoverCard.Root>
+          <HoverCard.Trigger
+            href={marketLink}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
+          >
+              ?
+          </HoverCard.Trigger>
+          <HoverCard.Content class="w-80">
+            <div class="flex justify-between space-x-4">
+  
+              <div class="space-y-1">
+                <h4 class="text-sm font-semibold">@sveltejs</h4>
+                <p class="text-sm">Cybernetically enhanced web apps.</p>
+                <div class="flex items-center pt-2">
+                  <span class="text-muted-foreground text-xs">
+                    Joined September 2022
+                  </span>
+                </div>
+              </div>
+            </div>
+          </HoverCard.Content>
+        </HoverCard.Root>
       </span>
       <span class="ml-auto text-muted-foreground italic">
         Position: {shareCount} Shares of
