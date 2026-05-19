@@ -1,21 +1,52 @@
-Kalshi API → get market info
-      ↓
-Perplexity API → research the market topic (web search)
-      ↓
-Claude/GPT → analyze research + market odds → give a buy/no-buy decision + sizing
-      ↓
-Output: recommendation with reasoning
+# KB1
 
-Prompt #1:
-You are an intern researcher at a hedge fund and you are apart of the kalshi branch. Your job is take the pink info sheet given to you to ask 3 very detailed and precise questions to perplexity. your goal is to make the best prediciton possible. The next step is to send the response to leadership to make the final go ahead. so in a numbered json ask your question:
-follow this spec for asking questions:
-{
-    "1. question 1 encuraged to be multi part",
-    "2. question 2 encuraged to be multi part",
-    "3. question 3 encuraged to be multi part"
-}
-Small: 1–2%
+![KB1 Thumbnail](./thumbnail.png)
+## Article
+Read the full breakdown on Substack:
+[Here](https://karppa404.substack.com/p/a-clueless-approach-to-llms-trading)
+---
 
-Medium: 3–5%
+KB1 is an AI-powered Kalshi trading research pipeline built for prediction markets.
 
-Large: 6–10% (cap)
+The system:
+
+* Pulls live Kalshi market data
+* Generates high-edge research questions using OpenAI
+* Uses Perplexity for real-time sports/news analysis
+* Produces a final trade recommendation with confidence + sizing
+
+Designed to simulate a hedge-fund style research workflow for finding edge in event markets.
+
+## Features
+
+* Automated market analysis
+* AI-generated research prompts
+* Real-time web research integration
+* Trade recommendation engine
+* Position sizing + confidence scoring
+
+## Stack
+
+* Python
+* OpenAI API
+* Perplexity API
+* Kalshi API
+
+## Example Flow
+
+1. Enter a Kalshi ticker
+2. Generate research questions
+3. Gather external intelligence
+4. Get final trade decision
+
+
+## Run Locally
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## Disclaimer
+
+This project is for research and educational purposes only. Not financial advice.
